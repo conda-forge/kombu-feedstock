@@ -1,16 +1,19 @@
-{% set version = "3.0.33" %}
+{% set name = "kombu" %}
+{% set version = "3.0.35" %}
+{% set md5 = "6483ac8ba7109ec606f5cb9bd084b6ef" %}
+{% set build = 0 %}
 
 package:
-    name: kombu
+    name: {{ name }}
     version: {{ version }}
 
 source:
-    fn: kombu-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/k/kombu/kombu-{{ version }}.tar.gz
-    md5: 75eaaaa57fd5f1cd304e285e20867f5f
+    fn: {{ name }}-{{ version }}.tar.gz
+    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    md5: {{ md5 }}
 
 build:
-    number: 0
+    number: {{ build }}
     script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
