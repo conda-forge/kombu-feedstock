@@ -47,7 +47,7 @@ about:
     home: https://kombu.readthedocs.org
     license_file: LICENSE
     license: BSD 3-Clause
-    summary: Messaging library for Python
+    summary: 'Messaging library for Python'
     dev_url: https://github.com/celery/kombu
     doc_url: https://kombu.readthedocs.org
 
