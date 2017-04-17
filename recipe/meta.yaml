@@ -23,8 +23,8 @@ requirements:
 
     run:
         - python
-        - anyjson >=0.3.3
-        - amqp >=1.4.9,<2.0
+        - simplejson
+        - amqp >=2.1.4,<3.0
 
 test:
     imports:
