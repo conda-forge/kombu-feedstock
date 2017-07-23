@@ -35,10 +35,6 @@ test:
         - kombu.transport
         - kombu.transport.virtual
         - kombu.utils
-    requires:
-        - mock >=0.7.0
-        - nose
-        - setuptools >=0.7
 
 about:
     home: https://kombu.readthedocs.org
