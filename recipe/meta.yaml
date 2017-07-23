@@ -1,6 +1,6 @@
 {% set name = "kombu" %}
-{% set version = "4.0.2" %}
-{% set sha256 = "d0fc6f2a36610a308f838db4b832dad79a681b516ac1d1a1f9d42edb58cc11a2" %}
+{% set version = "4.1.0" %}
+{% set sha256 = "4249d9dd9dbf1fcec471d1c2def20653c9310dd1a217272d77e4844f9d5273cb" %}
 {% set build = 0 %}
 
 package:
