@@ -25,6 +25,7 @@ requirements:
     run:
         - python
         - simplejson
+        - sqlalchemy
         - amqp >=2.1.4,<3.0
 
 test:
