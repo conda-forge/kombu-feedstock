@@ -1,6 +1,6 @@
 {% set name = "kombu" %}
-{% set version = "4.1.0" %}
-{% set sha256 = "4249d9dd9dbf1fcec471d1c2def20653c9310dd1a217272d77e4844f9d5273cb" %}
+{% set version = "4.2.1" %}
+{% set sha256 = "86adec6c60f63124e2082ea8481bbe4ebe04fde8ebed32c177c7f0cd2c1c9082" %}
 {% set build = 0 %}
 
 package:
@@ -9,30 +9,33 @@ package:
 
 source:
     fn: {{ name }}-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 
 build:
+    noarch: python
     number: {{ build }}
-    script: python setup.py install --single-version-externally-managed --record=record.txt
+    script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
     build:
         - python
-        - setuptools
+        - pip
 
     run:
         - python
         - simplejson
+        - sqlalchemy
         - amqp >=2.1.4,<3.0
 
 test:
     imports:
         - kombu
-        - kombu.async
-        - kombu.async.aws
-        - kombu.async.http
+        - kombu.asynchronous
+        - kombu.asynchronous.aws
+        - kombu.asynchronous.http
         - kombu.transport
+        - kombu.transport.sqlalchemy
         - kombu.transport.virtual
         - kombu.utils
 
