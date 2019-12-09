@@ -1,54 +1,47 @@
-{% set name = "kombu" %}
 {% set version = "4.6.7" %}
-{% set sha256 = "67b32ccb6fea030f8799f8fd50dd08e03a4b99464ebc4952d71d8747b1a52ad1" %}
-{% set build = 0 %}
 
 package:
-    name: {{ name|lower }}
-    version: {{ version }}
+  name: kombu
+  version: {{ version }}
 
 source:
-    fn: {{ name }}-{{ version }}.tar.gz
-    url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/k/kombu/kombu-{{ version }}.tar.gz
+  sha256: 67b32ccb6fea030f8799f8fd50dd08e03a4b99464ebc4952d71d8747b1a52ad1
 
 build:
-    noarch: python
-    number: {{ build }}
-    script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-    build:
-        - python
-        - pip
-
-    run:
-        - python
-        - simplejson
-        - sqlalchemy
-        - amqp >=2.5.2,<3.0
+  build:
+    - python
+    - pip
+  run:
+    - python
+    - importlib_metadata >=0.18  # [py<=37]
+    - amqp >=2.5.2,<2.6
 
 test:
-    imports:
-        - kombu
-        - kombu.asynchronous
-        - kombu.asynchronous.aws
-        - kombu.asynchronous.http
-        - kombu.transport
-        - kombu.transport.sqlalchemy
-        - kombu.transport.virtual
-        - kombu.utils
+  imports:
+    - kombu
+    - kombu.asynchronous
+    - kombu.asynchronous.aws
+    - kombu.asynchronous.http
+    - kombu.transport
+    - kombu.transport.sqlalchemy
+    - kombu.transport.virtual
+    - kombu.utils
 
 about:
-    home: https://kombu.readthedocs.org
-    license_file: LICENSE
-    license: BSD 3-Clause
-    summary: 'Messaging library for Python'
-    dev_url: https://github.com/celery/kombu
-    doc_url: https://kombu.readthedocs.org
+  home: https://kombu.readthedocs.org
+  license_file: LICENSE
+  license: BSD-3-Clause
+  summary: 'Messaging library for Python'
+  dev_url: https://github.com/celery/kombu
+  doc_url: https://kombu.readthedocs.org
 
 extra:
-    recipe-maintainers:
-        - anguslees
-        - kwilcox
-        - pmlandwehr
+  recipe-maintainers:
+    - anguslees
+    - kwilcox
+    - pmlandwehr
