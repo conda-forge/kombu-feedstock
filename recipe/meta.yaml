@@ -28,7 +28,6 @@ test:
     - kombu.asynchronous.aws
     - kombu.asynchronous.http
     - kombu.transport
-    - kombu.transport.sqlalchemy
     - kombu.transport.virtual
     - kombu.utils
 
