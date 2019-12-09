@@ -1,6 +1,6 @@
 {% set name = "kombu" %}
-{% set version = "4.6.3" %}
-{% set sha256 = "eb365ea795cd7e629ba2f1f398e0c3ba354b91ef4de225ffdf6ab45fdfc7d581" %}
+{% set version = "4.6.7" %}
+{% set sha256 = "67b32ccb6fea030f8799f8fd50dd08e03a4b99464ebc4952d71d8747b1a52ad1" %}
 {% set build = 0 %}
 
 package:
@@ -15,7 +15,7 @@ source:
 build:
     noarch: python
     number: {{ build }}
-    script: python -m pip install --no-deps --ignore-installed .
+    script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
     build:
@@ -26,7 +26,7 @@ requirements:
         - python
         - simplejson
         - sqlalchemy
-        - amqp >=2.1.4,<3.0
+        - amqp >=2.5.2,<3.0
 
 test:
     imports:
