@@ -19,7 +19,7 @@ requirements:
   run:
     - python
     - importlib_metadata >=0.18  # [py<=37]
-    - amqp >=2.5.2,<2.6
+    - amqp >=2.6.0,<2.7
 
 test:
   imports:
