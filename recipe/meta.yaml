@@ -19,7 +19,7 @@ requirements:
   run:
     - python
     - importlib_metadata >=0.18  # [py<=37]
-    - amqp >=2.6.0,<2.7
+    - amqp >=5.0.0,<6.0.0
     - vine <=1.3.0
 
 test:
