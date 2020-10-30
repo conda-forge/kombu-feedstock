@@ -23,6 +23,10 @@ requirements:
     - vine <=1.3.0
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - kombu
     - kombu.asynchronous
