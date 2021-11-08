@@ -9,6 +9,8 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kombu-feedstock
 
 Summary: Messaging library for Python.
 
+Development: https://github.com/celery/kombu
+
 Documentation: https://pythonhosted.org/kombu/
 
 Current build status
