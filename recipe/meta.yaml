@@ -44,6 +44,7 @@ about:
   home: https://kombu.readthedocs.io
   summary: Messaging library for Python.
   doc_url: https://pythonhosted.org/kombu/
+  dev_url: https://github.com/celery/kombu
   license: BSD-3-Clause
   license_file: LICENSE
 
