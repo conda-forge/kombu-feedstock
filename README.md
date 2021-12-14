@@ -241,5 +241,4 @@ Feedstock Maintainers
 * [@chrisburr](https://github.com/chrisburr/)
 * [@igortg](https://github.com/igortg/)
 * [@kwilcox](https://github.com/kwilcox/)
-* [@pmlandwehr](https://github.com/pmlandwehr/)
 
