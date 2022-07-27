@@ -1,5 +1,5 @@
 {% set name = "kombu" %}
-{% set version = "5.2.4" %}
+{% set version = "5.3.0a1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
-  sha256: 37cee3ee725f94ea8bb173eaab7c1760203ea53bbebae226328600f9d2799610
+  sha256: 02f3258b75c967586418e10942a14996900a04c62ea23252b4b4d3dd5c6d81ab
 
 build:
   number: 1
@@ -23,11 +23,12 @@ requirements:
     - pytest
     - python
   run:
-    - amqp >=5.0.6,<6.0.0
+    - amqp >=5.1.1,<6.0.0
     - cached-property  # [py<38]
     - importlib-metadata >=0.18  # [py<38]
     - python
     - vine
+    - typing-extensions
 
 test:
   requires:
