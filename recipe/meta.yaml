@@ -23,9 +23,10 @@ requirements:
     - pytest
     - python
   run:
-    - amqp >=5.0.6,<6.0.0
-    - cached-property  # [py<38]
-    - importlib-metadata >=0.18  # [py<38]
+    - amqp >=5.1.1,<6.0.0
+    - backports.zoneinfo >=0.2.1    # [py<39]
+    - tzdata  # [py<39]
+    - typing_extensions  # [py<310]
     - python
     - vine
 
