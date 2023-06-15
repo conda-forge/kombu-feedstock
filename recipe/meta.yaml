@@ -24,8 +24,8 @@ requirements:
     - python
   run:
     - amqp >=5.1.1,<6.0.0
-    - backports.zoneinfo >=0.2.1    # [py<39]
-    - tzdata
+    - backports.zoneinfo >=0.2.1    # [py<39 or python_impl == "pypy"]
+    - tzdata  # [py<39 or python_impl == "pypy"]
     - typing_extensions  # [py<310]
     - python
     - vine
