@@ -1,5 +1,5 @@
 {% set name = "kombu" %}
-{% set version = "5.3.3" %}
+{% set version = "5.3.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
-  sha256: 1491df826cfc5178c80f3e89dd6dfba68e484ef334db81070eb5cb8094b31167
+  sha256: 0bb2e278644d11dea6272c17974a3dbb9688a949f3bb60aeb5b791329c44fadc
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - typing_extensions  # [py<310]
     - python
     - vine
+    - boto3 >=1.26.143  # for sqs
 
 test:
   requires:
