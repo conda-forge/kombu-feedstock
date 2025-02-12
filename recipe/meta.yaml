@@ -21,21 +21,21 @@ requirements:
   host:
     - pip
     - pytest
-    - python {{ python_min }}
+    - python
     - setuptools
   run:
     - amqp >=5.1.1,<6.0.0
     - backports.zoneinfo >=0.2.1    # [py<39 or python_impl == "pypy"]
     - python-tzdata  # [py<39 or python_impl == "pypy"]
     - typing_extensions  # [py<310]
-    - python >={{ python_min }}
+    - python
     - vine
     - boto3 >=1.26.143  # for sqs
 
 test:
   requires:
+    - python
     - pip
-    - python {{ python_min }}
   commands:
     - pip check
   imports:
