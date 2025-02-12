@@ -22,6 +22,7 @@ requirements:
     - pip
     - pytest
     - python
+    - setuptools
   run:
     - amqp >=5.1.1,<6.0.0
     - backports.zoneinfo >=0.2.1    # [py<39 or python_impl == "pypy"]
