@@ -329,6 +329,5 @@ Feedstock Maintainers
 
 * [@anguslees](https://github.com/anguslees/)
 * [@chrisburr](https://github.com/chrisburr/)
-* [@efiop](https://github.com/efiop/)
 * [@kwilcox](https://github.com/kwilcox/)
 
