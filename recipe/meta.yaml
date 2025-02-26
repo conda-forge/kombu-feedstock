@@ -1,7 +1,6 @@
 {% set name = "kombu" %}
 {% set version = "5.4.1" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -25,8 +24,8 @@ requirements:
     - setuptools
   run:
     - amqp >=5.1.1,<6.0.0
-    - backports.zoneinfo >=0.2.1    # [py<39 or python_impl == "pypy"]
-    - python-tzdata  # [py<39 or python_impl == "pypy"]
+    - backports.zoneinfo >=0.2.1    # [py<39]
+    - python-tzdata  # [py<39]
     - typing_extensions  # [py<310]
     - python
     - vine
