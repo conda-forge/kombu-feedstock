@@ -1,5 +1,6 @@
 {% set name = "kombu" %}
 {% set version = "5.4.1" %}
+# python_min from https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/main/recipe/conda_build_config.yaml
 
 package:
   name: {{ name|lower }}
@@ -10,8 +11,9 @@ source:
   sha256: 1c05178826dab811f8cab5b0a154d42a7a33d8bcdde9fa3d7b4582e43c3c03db
 
 build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -20,20 +22,18 @@ requirements:
   host:
     - pip
     - pytest
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
     - amqp >=5.1.1,<6.0.0
-    - backports.zoneinfo >=0.2.1    # [py<39]
-    - python-tzdata  # [py<39]
-    - typing_extensions  # [py<310]
-    - python
+    - typing_extensions  # strictly, py<310
+    - python >={{ python_min }}
     - vine
     - boto3 >=1.26.143  # for sqs
 
 test:
   requires:
-    - python
+    - python {{ python_min }}
     - pip
   commands:
     - pip check
