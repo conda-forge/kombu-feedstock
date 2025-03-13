@@ -1,38 +1,38 @@
 {% set name = "kombu" %}
 {% set version = "5.4.1" %}
-
+# Latest python_min is defined in https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/main/recipe/conda_build_config.yaml
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
   sha256: 1c05178826dab811f8cab5b0a154d42a7a33d8bcdde9fa3d7b4582e43c3c03db
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
+    - python {{ python_min }}
     - pip
-    - pytest
-    - python
+    - setuptools
   run:
     - amqp >=5.1.1,<6.0.0
-    - backports.zoneinfo >=0.2.1    # [py<39 or python_impl == "pypy"]
-    - python-tzdata  # [py<39 or python_impl == "pypy"]
-    - typing_extensions  # [py<310]
-    - python
+    - typing_extensions  # strictly, py<310
+    - python >={{ python_min }}
     - vine
     - boto3 >=1.26.143  # for sqs
 
 test:
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pip check
