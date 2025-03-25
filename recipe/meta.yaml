@@ -24,11 +24,13 @@ requirements:
     - pip
     - setuptools
   run:
+    # See https://pypi.org/pypi/kombu/{{ version }}/json
     - amqp >=5.1.1,<6.0.0
     - typing_extensions  # strictly, py<310
     - python >={{ python_min }}
-    - vine
-    - boto3 >=1.26.143  # for sqs
+    - vine >=5.1.0 # strictly, ==5.1.0
+    - tzdata ==2025.1  # See https://github.com/celery/kombu/issues/2272
+    - boto3 >=1.26.143  # for sqs option
 
 test:
   requires:
