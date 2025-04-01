@@ -42,7 +42,7 @@ test:
     - setup.cfg
   commands:
     # - pip check
-    - ls $SRC_DIR && ls .
+    - set -o posix ; set
     - python -m mypy -p kombu --config-file setup.cfg
   imports:
     - kombu
