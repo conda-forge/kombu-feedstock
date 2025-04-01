@@ -37,8 +37,10 @@ test:
   requires:
     - python {{ python_min }}
     - pip
+    - pre-commit >=4.0.1
   commands:
     # - pip check
+      - pre-commit run mypy --all-files
   imports:
     - kombu
     - kombu.asynchronous
