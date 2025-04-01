@@ -40,7 +40,7 @@ test:
     - mypy ==1.14.1
   commands:
     # - pip check
-    - python -m mypy --config-file setup.cfg
+    - ls . && python -m mypy --config-file setup.cfg
   imports:
     - kombu
     - kombu.asynchronous
