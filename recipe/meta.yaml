@@ -42,8 +42,7 @@ test:
     - setup.cfg
   commands:
     # - pip check
-    - set -o posix ; set
-    - python -m mypy -p kombu --config-file setup.cfg
+    - mypy -p kombu --config-file setup.cfg
   imports:
     - kombu
     - kombu.asynchronous
