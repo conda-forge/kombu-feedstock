@@ -38,9 +38,11 @@ test:
     - python {{ python_min }}
     - pip
     - mypy ==1.14.1
+  source_files:
+    - setup.cfg
   commands:
     # - pip check
-    - ls . && python -m mypy --config-file setup.cfg
+    - python -m mypy $SRC_DIR --config-file setup.cfg
   imports:
     - kombu
     - kombu.asynchronous
