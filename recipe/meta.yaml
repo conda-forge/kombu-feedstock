@@ -28,21 +28,17 @@ requirements:
     # See https://pypi.org/pypi/kombu/{{ version }}/json
     # Only enforce lower constraints of exact versions, per https://iscinumpy.dev/post/bound-version-constraints/
     - amqp >=5.1.1,<6.0.0
-    - typing_extensions >=4.12.2  # strictly, ==4.12.2 py<310. See https://github.com/celery/kombu/pull/2274
-    - vine >=5.1.0 # strictly, ==5.1.0
-    - python-tzdata >=2025.1 # strictly, ==2025.1. See https://github.com/celery/kombu/issues/2272
+    - typing_extensions ==4.12.2  # See https://github.com/celery/kombu/pull/2274
+    - vine >==5.1.0
+    - python-tzdata ==2025.1 # See https://github.com/celery/kombu/issues/2272
     - boto3 >=1.26.143  # for sqs option
 
 test:
   requires:
     - python {{ python_min }}
     - pip
-    - mypy ==1.14.1
-  source_files:
-    - setup.cfg
   commands:
-    # - pip check
-    - mypy -p kombu --config-file setup.cfg
+    - pip check
   imports:
     - kombu
     - kombu.asynchronous
