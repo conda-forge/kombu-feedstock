@@ -37,11 +37,10 @@ test:
   requires:
     - python {{ python_min }}
     - pip
-    - git
-    - pre-commit >=4.0.1
+    - mypy ==1.14.1
   commands:
     # - pip check
-     - git init && git add . && pre-commit run mypy --all-files
+    - python -m mypy --config-file setup.cfg
   imports:
     - kombu
     - kombu.asynchronous
