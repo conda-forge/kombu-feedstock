@@ -26,7 +26,6 @@ requirements:
   run:
     - python >={{ python_min }}
     # See https://pypi.org/pypi/kombu/{{ version }}/json
-    # Only enforce lower constraints of exact versions, per https://iscinumpy.dev/post/bound-version-constraints/
     - amqp >=5.1.1,<6.0.0
     - typing_extensions ==4.12.2  # See https://github.com/celery/kombu/pull/2274
     - vine ==5.1.0
