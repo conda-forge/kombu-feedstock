@@ -149,5 +149,6 @@ Feedstock Maintainers
 
 * [@anguslees](https://github.com/anguslees/)
 * [@chrisburr](https://github.com/chrisburr/)
+* [@jamesmyatt](https://github.com/jamesmyatt/)
 * [@kwilcox](https://github.com/kwilcox/)
 
