@@ -1,5 +1,5 @@
 {% set name = "kombu" %}
-{% set version = "5.5.1" %}
+{% set version = "5.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
-  sha256: a4c2250396cdfb947c5e5322f3094fd36c3f86a1cff655f5cffdf45f371dddb8
+  sha256: 2dd27ec84fd843a4e0a7187424313f87514b344812cb98c25daddafbb6a7ff0e
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - amqp >=5.1.1,<6.0.0
     - typing_extensions ==4.12.2  # See https://github.com/celery/kombu/pull/2274
     - vine ==5.1.0
-    - python-tzdata ==2025.1 # See https://github.com/celery/kombu/issues/2272
+    - python-tzdata ==2025.2 # See https://github.com/celery/kombu/issues/2272
     - boto3 >=1.26.143  # for sqs option
 
 test:
