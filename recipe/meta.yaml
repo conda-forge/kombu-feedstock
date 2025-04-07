@@ -1,5 +1,5 @@
 {% set name = "kombu" %}
-{% set version = "5.4.1" %}
+{% set version = "5.5.0" %}
 # Latest python_min is defined in https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/main/recipe/conda_build_config.yaml
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
-  sha256: 1c05178826dab811f8cab5b0a154d42a7a33d8bcdde9fa3d7b4582e43c3c03db
+  sha256: 72e65c062e903ee1b4e8b68d348f63c02afc172eda409e3aca85867752e79c0b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -24,11 +24,13 @@ requirements:
     - pip
     - setuptools
   run:
-    - amqp >=5.1.1,<6.0.0
-    - typing_extensions  # strictly, py<310
     - python >={{ python_min }}
-    - vine
-    - boto3 >=1.26.143  # for sqs
+    # See https://pypi.org/pypi/kombu/{{ version }}/json
+    - amqp >=5.1.1,<6.0.0
+    - typing_extensions ==4.12.2  # See https://github.com/celery/kombu/pull/2274
+    - vine ==5.1.0
+    - python-tzdata ==2025.1 # See https://github.com/celery/kombu/issues/2272
+    - boto3 >=1.26.143  # for sqs option
 
 test:
   requires:
@@ -58,3 +60,4 @@ extra:
     - chrisburr
     - anguslees
     - kwilcox
+    - jamesmyatt
