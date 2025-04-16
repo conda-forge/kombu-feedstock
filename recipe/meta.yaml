@@ -1,5 +1,5 @@
 {% set name = "kombu" %}
-{% set version = "5.5.2" %}
+{% set version = "5.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kombu-{{ version }}.tar.gz
-  sha256: 2dd27ec84fd843a4e0a7187424313f87514b344812cb98c25daddafbb6a7ff0e
+  sha256: 021a0e11fcfcd9b0260ef1fb64088c0e92beb976eb59c1dfca7ddd4ad4562ea2
 
 build:
   noarch: python
