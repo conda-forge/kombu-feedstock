@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -26,9 +26,8 @@ requirements:
     - python >={{ python_min }}
     # See https://pypi.org/pypi/kombu/{{ version }}/json
     - amqp >=5.1.1,<6.0.0
-    - typing_extensions ==4.12.2  # See https://github.com/celery/kombu/pull/2274
     - vine ==5.1.0
-    - python-tzdata ==2025.2 # See https://github.com/celery/kombu/issues/2272
+    - python-tzdata >=2025.2
     - boto3 >=1.26.143  # for sqs option
 
 test:
