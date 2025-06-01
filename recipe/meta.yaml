@@ -28,6 +28,7 @@ requirements:
     - amqp >=5.1.1,<6.0.0
     - vine ==5.1.0
     - python-tzdata >=2025.2
+    - packaging
     - boto3 >=1.26.143  # for sqs option
 
 test:
